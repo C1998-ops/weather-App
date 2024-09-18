@@ -1,0 +1,319 @@
+.App {
+  text-align: center;
+}
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: white;
+}
+.weather {
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.weather_body {
+  width: 100%;
+  height: 100%;
+  max-width: calc(100% - 50px);
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: grid;
+  grid-template-columns: 300px auto;
+}
+.weather_left_container {
+  outline: none;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(minmax(100px, 1fr));
+}
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  height: 50px;
+  width: 100%;
+  max-width: calc(100% - 100px);
+  align-items: center;
+  padding: 0 30px;
+}
+.search-container input {
+  color: black;
+  font-size: 14px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border: 2px solid transparent;
+  outline: none;
+  margin: 0 5px;
+}
+.search-container .s_input_icons {
+  margin: 0;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+}
+.weather_img {
+  max-width: calc(100% - 50px);
+  max-height: max-content;
+  overflow: hidden;
+}
+.w_img {
+  width: 90%;
+  height: auto;
+  background-position: center;
+}
+.weather_data {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left side */
+  padding: 10px;
+  border-bottom: 2px solid lightgray; /* Optional: adds a border around the container */
+  border-radius: 5px; /* Optional: rounds the corners */
+}
+.weather-degree {
+  font-size: 2rem; /* Adjust font size as needed */
+  color: #000000; /* Highlight color for temperature */
+  margin: 0;
+}
+
+.weather-day span {
+  font-size: 1rem; /* Adjust font size as needed */
+  color: black; /* Color for the day and time text */
+  font-weight: 600;
+}
+
+.weather-day p {
+  margin: 0; /* Remove default margin from <p> */
+  font-size: 0.875rem; /* Adjust font size for time */
+  color: #555; /* Slightly lighter color for time */
+}
+
+.weather_right {
+  width: 100%;
+  background-color: #f6f6f8;
+  height: 100%;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+.weather_right_header {
+  margin: 20px;
+  padding: 20px 10px;
+  display: flex;
+  height: 30px;
+  border: 1px solid transparent;
+  /* outline: 2px solid lightgray; */
+}
+.weather_right_body {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-end;
+}
+.weather-header-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: unset;
+  justify-content: space-between;
+  align-items: center;
+}
+.weather-weeks {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.weather-weeks span {
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.weather-deg-types span {
+  font-size: 16px;
+  margin-right: 7px;
+}
+
+.weather-deg-types button {
+  padding: 5px;
+  border: none;
+  /* background-color: #ddd; */
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: auto;
+}
+
+.weather-deg-types button:hover {
+  background-color: #ccc;
+}
+
+.weather_data_of_week {
+  margin: 0;
+  padding: 10px 20px;
+  width: auto;
+  display: flex;
+  gap: 10px;
+  flex-flow: row wrap;
+  overflow: auto;
+}
+.weather-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 320px;
+  min-width: 90px;
+}
+.weather-day img {
+  width: 50px;
+  height: 50px;
+}
+.weather_div_next {
+  width: 100%;
+  max-height: 220px;
+  overflow: hidden;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  ); /* Responsive grid columns */
+  gap: 10px; /* Space between grid items */
+  padding: 10px; /* Optional: Add padding for spacing */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+.weather_country {
+  max-width: 300px;
+  padding-top: 10px;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(bLACK, WHITE);
+}
+.select_country {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding-top: 10px;
+}
+.weather_type {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+  padding: 10px; /* Optional: Add padding inside each item */
+}
+
+.img_wrapper {
+  width: 50px;
+  height: 50px; /* Set a fixed height to maintain aspect ratio */
+  display: flex;
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  margin-bottom: 5px; /* Add space between icon and text */
+}
+
+.weather_type p {
+  font-weight: 700;
+  margin: 0; /* Remove default margin */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  color: black; /* Set text color */
+}
+
+.weather_grids {
+  display: grid;
+  grid-template-rows: repeat(2 auto);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.weather_grid_card {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 20px 10px;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 300px;
+  min-width: fit-content;
+  align-items: flex-start;
+}
+.time-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-item {
+  display: flex;
+  margin-bottom: 5px;
+  max-width: 120px;
+  align-items: center;
+}
+.icon img {
+  width: 50px;
+  height: auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 14px;
+  font-weight: 700;
+}
+.card_header {
+  color: lightgray;
+  font-weight: 700;
+}
+/*emoji container8*/
+.emoji-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  width: fit-content;
+  margin: 10px auto;
+}
+
+.emoji-body {
+  display: flex;
+  align-items: center;
+}
+
+.emoji-icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.emoji-img {
+  margin-left: 8px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.emoji-icon span {
+  margin-right: 8px;
+}
